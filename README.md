@@ -2,7 +2,7 @@
 
 # A counterexample to the strong four-conjecture
 
-A standalone Lean proof that Ramaekers's strong four-conjecture is false:
+A standalone Lean proof that Ramaekers's [strong four-conjecture](https://en.wikipedia.org/wiki/N_conjecture#Stronger_form) is false:
 
 \[
 \limsup_{\substack{a_1+\cdots+a_4=0\\
