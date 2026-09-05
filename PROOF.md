@@ -195,10 +195,9 @@ The Lean results refute both the uniform-bound and quality-limsup formulations
 displayed there. Neither formulation on Wikipedia includes an exceptional
 algebraic set.
 
-The same mathematical statement appears in
-[Ramaekers's Conjecture 5.1](https://pure.tue.nl/ws/portalfiles/portal/67739846/657782-1.pdf#page=24),
-also stated in [Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2).
-These are supporting literature references, not the original source target.
+For a precise literature statement of the same conjecture, see
+[Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2).
+Their lower bounds address `n ≥ 5`; the result here concerns `n = 4`.
 
 The attribution to Vojta on Wikipedia needs a qualification.
 [Vojta's 1998 paper, §2, following (2.5)](https://arxiv.org/html/math/9806171v1)
