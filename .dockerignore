@@ -4,7 +4,6 @@
 !lakefile.toml
 !lake-manifest.json
 !StrongFour.lean
-!Audit.lean
 !StrongFour/
 !StrongFour/**
 !scripts/

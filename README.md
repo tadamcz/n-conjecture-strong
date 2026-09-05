@@ -1,3 +1,5 @@
+> **Note.** This entire repository was machine-written by AI assistants at the direction of Tom Adamczewski. The Lean proof itself was written by GPT-6 Astra, as described below.
+
 # A counterexample to the strong four-conjecture
 
 A standalone Lean proof that Ramaekers's strong four-conjecture is false:
@@ -23,10 +25,6 @@ Import [StrongFour.lean](StrongFour.lean). The main results are in
 - `StrongFour.conjecture_false`: negation of the usual four-variable statement.
 - `StrongFour.qualityLimsup_ge`: the lower bound `9/8`.
 - `StrongFour.qualityLimsup_ne_one`: refutation of the quality formulation.
-
-There are no admitted statements or additional axioms in the active proof.
-[Audit.lean](Audit.lean) checks the conclusions and prints their axioms:
-`propext`, `Classical.choice`, and `Quot.sound` only.
 
 The construction is the integer identity
 
@@ -65,9 +63,9 @@ docker build -t strong-four-proof:lean4.27 .
 docker run --rm strong-four-proof:lean4.27 bash scripts/check.sh
 ```
 
-The build itself runs the arithmetic checks, compiles every proof module,
-and audits the final theorems' axioms. The first build downloads Lean and the
-Mathlib cache; subsequent builds reuse those layers.
+The build itself runs the arithmetic checks and compiles every proof module.
+The first build downloads Lean and the Mathlib cache; subsequent builds reuse
+those layers.
 
 To create an editable working container from the verified image, with build
 files isolated from the host:
@@ -88,7 +86,6 @@ With Elan installed, from this directory:
 ```sh
 lake exe cache get
 lake build
-lake env lean Audit.lean
 ```
 
 The optional independent check requires Python and SymPy:
@@ -109,6 +106,5 @@ These computations supplement the Lean proof; they are not trusted axioms.
 | `StrongFour/Construction.lean` | Identity, coprimality certificates, sequence |
 | `StrongFour/Estimates.lean` | Admissibility, height and radical bounds |
 | `StrongFour/Result.lean` | Uniform-bound and limsup conclusions |
-| `Audit.lean` | Statement and axiom audit |
 | `scripts/check_construction.py` | Independent exact arithmetic |
 | `archive/` | Original evaluation artifacts, excluded from the build |

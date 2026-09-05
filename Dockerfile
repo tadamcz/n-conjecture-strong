@@ -15,7 +15,7 @@ WORKDIR /opt/strong-four
 COPY lean-toolchain lakefile.toml lake-manifest.json ./
 RUN lake exe cache get
 COPY StrongFour/ StrongFour/
-COPY StrongFour.lean Audit.lean ./
+COPY StrongFour.lean ./
 COPY scripts/check.sh scripts/check_construction.py scripts/
 RUN bash scripts/check.sh
 
