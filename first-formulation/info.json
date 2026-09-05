@@ -1,0 +1,39 @@
+{
+ "file": "mQjcUZS3Z9ej4a6Qanuxx5.eval",
+ "name": "samples/NConjecture.n_conjecture.variants.strong_epoch_1.json",
+ "id": "NConjecture.n_conjecture.variants.strong",
+ "epoch": 1,
+ "uuid": "h7sLgxyz42JWYDEkwtPQpa",
+ "score": "C",
+ "claim": "disproof",
+ "stage": "comparator",
+ "error": null,
+ "turns": 317,
+ "started": "2026-09-04T22:43:13.515407+00:00",
+ "completed": "2026-09-05T02:23:18.096772+00:00",
+ "score_explanation": "Building Challenge\n\u26a0 [8061/8062] Built Challenge (4.5s)\nwarning: run/Challenge.lean:92:8: declaration uses 'sorry'\nwarning: run/Challenge.lean:100:8: declaration uses 'sorry'\nBuild completed successfully (8062 jobs).\nExporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, NConjecture.n_conjecture.variants.strong.disproof, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Challenge\nBuilding Solution\n\u26a0 [8061/8062] Built Solution (6.2s)\nwarning: run/Solution.lean:92:8: declaration uses 'sorry'\nBuild completed successfully (8062 jobs).\nExporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, NConjecture.n_conjecture.variants.strong.disproof, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Solution\nRunning Lean default kernel on solution.\nLean default kernel accepts the solution\nYour solution is okay!",
+ "score_metadata": {
+  "stage": "comparator",
+  "claim": "disproof",
+  "verifier_output": "Building Challenge\n\u26a0 [8061/8062] Built Challenge (4.5s)\nwarning: run/Challenge.lean:92:8: declaration uses 'sorry'\nwarning: run/Challenge.lean:100:8: declaration uses 'sorry'\nBuild completed successfully (8062 jobs).\nExporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, NConjecture.n_conjecture.variants.strong.disproof, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Challenge\nBuilding Solution\n\u26a0 [8061/8062] Built Solution (6.2s)\nwarning: run/Solution.lean:92:8: declaration uses 'sorry'\nBuild completed successfully (8062 jobs).\nExporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, NConjecture.n_conjecture.variants.strong.disproof, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Solution\nRunning Lean default kernel on solution.\nLean default kernel accepts the solution\nYour solution is okay!"
+ },
+ "metadata_keys": [
+  "sketch",
+  "source",
+  "decl_name",
+  "submission_contents"
+ ],
+ "source": "Sources/NConjecture.lean",
+ "decl_name": "NConjecture.n_conjecture.variants.strong",
+ "model_usage": {
+  "epoch/vega-alpha": {
+   "input_tokens": 12041,
+   "output_tokens": 443714,
+   "total_tokens": 19126684,
+   "input_tokens_cache_write": 2548270,
+   "input_tokens_cache_read": 16122659,
+   "reasoning_tokens": 290276,
+   "total_cost": 70.28214399999999
+  }
+ }
+}
