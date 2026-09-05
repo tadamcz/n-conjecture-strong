@@ -3,8 +3,9 @@ import Mathlib
 /-!
 # The strong four-conjecture
 
-These definitions concern only four integers. The target is Ramaekers's
-conjecture, without the exceptional algebraic set in Vojta's conjecture.
+These definitions specialize the strong n-conjecture displayed on Wikipedia
+to four integers. That source statement has no exceptional algebraic set.
+See README.md for its distinction from Vojta's formulation and for literature references.
 -/
 
 namespace StrongFour

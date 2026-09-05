@@ -186,12 +186,19 @@ novelty are not claimed.
 
 ## Which conjecture is refuted
 
-The admissibility conditions match
+The source target was
+[Wikipedia's “Stronger form” section](https://en.wikipedia.org/wiki/N_conjecture#Stronger_form),
+as recorded in the [original challenge](archive/first-formulation/Challenge.lean).
+For `n = 4`, the active Lean definitions match its pairwise coprimality,
+zero-sum and subsum conditions, height, radical, and uniform bound.
+The Lean results refute both the uniform-bound and quality-limsup formulations
+displayed there. Neither formulation on Wikipedia includes an exceptional
+algebraic set.
+
+The same mathematical statement appears in
 [Ramaekers's Conjecture 5.1](https://pure.tue.nl/ws/portalfiles/portal/67739846/657782-1.pdf#page=24),
 also stated in [Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2).
-For `n = 4`, this is the statement displayed in
-[Wikipedia's “Stronger form” section](https://en.wikipedia.org/wiki/N_conjecture#Stronger_form).
-The Lean results refute both its uniform-bound and quality-limsup formulations.
+These are supporting literature references, not the original source target.
 
 The attribution to Vojta on Wikipedia needs a qualification.
 [Vojta's 1998 paper, §2, following (2.5)](https://arxiv.org/html/math/9806171v1)

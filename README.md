@@ -2,7 +2,7 @@
 
 # A counterexample to the strong four-conjecture
 
-A standalone Lean proof that the [strong four-conjecture](https://en.wikipedia.org/wiki/N_conjecture#Stronger_form) is false:
+A standalone Lean proof refuting the `n = 4` case of the [strong n-conjecture as stated on Wikipedia](https://en.wikipedia.org/wiki/N_conjecture#Stronger_form):
 
 \[
 \limsup_{\substack{a_1+\cdots+a_4=0\\
@@ -16,14 +16,15 @@ The same family disproves every uniform bound
 The conclusion concerns **four integers only** and does not settle the
 three-variable abc conjecture.
 
-## Attribution and relation to Vojta
+## Source statement and relation to Vojta
 
-The statement refuted here is the `n = 4` case of the strong n-conjecture
-displayed in Wikipedia's “Stronger form” section. The same statement appears
-in [Coen Ramaekers's 2009 thesis, Conjecture 5.1](https://pure.tue.nl/ws/portalfiles/portal/67739846/657782-1.pdf#page=24),
-and [Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2)
-attribute this formulation to Ramaekers: pairwise coprime integers, zero
-total sum, no nonempty proper zero subsum, and quality limsup equal to one.
+The original autoformalization targeted Wikipedia's “Stronger form” section;
+see the [archived challenge](archive/first-formulation/Challenge.lean).
+For `n = 4`, the active Lean statement uses the conditions and bound displayed
+there: pairwise coprime integers, zero total sum, no nonempty proper zero
+subsum, and a uniform exponent `1 + ε`. The quality theorem refutes the
+displayed limsup formulation as well. Neither displayed formulation includes
+an exceptional algebraic set.
 
 Wikipedia attributes its displayed statement to Vojta, but
 [Vojta's 1998 paper, §2, following (2.5)](https://arxiv.org/html/math/9806171v1)
@@ -38,6 +39,13 @@ exclude this curve. Thus the proof **refutes the statement displayed on
 Wikipedia for four integers, but does not refute Vojta's formulation with
 an exceptional set**. See [PROOF.md](PROOF.md#which-conjecture-is-refuted)
 for the geometric distinction.
+
+As a separate literature reference, the same statement appears in
+[Coen Ramaekers's 2009 thesis, Conjecture 5.1](https://pure.tue.nl/ws/portalfiles/portal/67739846/657782-1.pdf#page=24),
+and is attributed to him by
+[Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2).
+This identifies a matching formulation in the literature; Wikipedia was
+the original source target.
 
 ## The proof
 
