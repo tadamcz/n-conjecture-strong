@@ -1,11 +1,114 @@
-# Strong n-conjecture (Vojta): n = 4 refutations
+# A counterexample to the strong four-conjecture
 
-Data from a Hawk autoformalization eval run (`wikipedia-autoformalized-v-mn0wtzf7uda6y0dc`). Two formulations of the
-*strong n-conjecture*, both stated for n in {3,4}; each submission refutes only the n = 4
-instance and leaves n = 3 (the abc conjecture) untouched.
+A standalone Lean proof that Ramaekers's strong four-conjecture is false:
 
-- `first-formulation/` - sample `NConjecture.n_conjecture.variants.strong` (uuid `h7sLgxyz42JWYDEkwtPQpa`), scored C / disproof. Quality tends to 20/19 via a Beukers-Stewart (5,2) Davenport-Zannier pair.
-- `quality-formulation/` - sample `NConjecture.n_conjecture.variants.strong_quality` (uuid `DPumQDXkoXpfGod6xePoVD`), scored C / disproof. limsup quality >= 1080/1074 via a degree-45 curve on x^4 + y^4 = z^4 + w^4 with a forced square factor.
+\[
+\limsup_{\substack{a_1+\cdots+a_4=0\\
+\text{pairwise coprime, no proper zero subsum}}}
+\frac{\log\max_i|a_i|}{\log\operatorname{rad}(|a_1a_2a_3a_4|)}
+\;\geq\;\frac98.
+\]
 
-Combined into one repo because they are two independent proofs of the same fact: the strong
-4-conjecture is false. See each subdirectory's `ANALYSIS.md`.
+The same family disproves every uniform bound
+`max |aᵢ| < C · rad(∏ |aᵢ|)^(1 + ε)` for `0 ≤ ε < 1/8`.
+The conclusion concerns **four integers only**. It makes no claim about abc
+or about Vojta's conjecture with an exceptional algebraic set.
+
+## The proof
+
+Import [StrongFour.lean](StrongFour.lean). The main results are in
+[StrongFour/Result.lean](StrongFour/Result.lean):
+
+- `StrongFour.no_uniform_bound`: failure for every `0 ≤ ε < 1/8`.
+- `StrongFour.conjecture_false`: negation of the usual four-variable statement.
+- `StrongFour.qualityLimsup_ge`: the lower bound `9/8`.
+- `StrongFour.qualityLimsup_ne_one`: refutation of the quality formulation.
+
+There are no admitted statements or additional axioms in the active proof.
+[Audit.lean](Audit.lean) checks the conclusions and prints their axioms:
+`propext`, `Classical.choice`, and `Quot.sound` only.
+
+The construction is the integer identity
+
+\[
+u^9-(u-8)^5(u^2+20u+280)^2-105(2u-3)^6+D(u)=0,
+\]
+
+where
+
+\[
+D(u)=130032u^4+10728480u^3-202978980u^2+1238324220u-2568934655.
+\]
+
+A congruence progression ensures pairwise coprimality. On the subsequence
+`2u − 3 = 35 Kⁿ`, the radical of the third term has bounded prime support.
+The height grows at least as `u⁹`, while the radical is bounded by a constant
+times `u⁸`. See [PROOF.md](PROOF.md) for the mathematical argument, explicit
+constants, and provenance.
+
+This improves the two input submissions' bounds, `20/19` and `180/179`, and
+replaces both constructions with one degree-nine family. `9/8` is a **lower
+bound**, not a claim of equality or optimality. Novelty in the literature has
+not been established.
+
+## Reproduce with Docker
+
+The image is built from public Debian, Elan, and Mathlib sources. Both Lean
+and Mathlib are pinned:
+
+- Lean `4.27.0`.
+- Mathlib `a3a10db0e9d66acbebf76c5e6a135066525ac900`.
+- Transitive dependencies are pinned in [lake-manifest.json](lake-manifest.json).
+
+```sh
+docker build -t strong-four-proof:lean4.27 .
+docker run --rm strong-four-proof:lean4.27 bash scripts/check.sh
+```
+
+The build itself runs the arithmetic checks, compiles every proof module,
+and audits the final theorems' axioms. The first build downloads Lean and the
+Mathlib cache; subsequent builds reuse those layers.
+
+To create an editable working container from the verified image, with build
+files isolated from the host:
+
+```sh
+docker run -d --name strong-four-lean \
+  --mount type=bind,source="$PWD",target=/work \
+  --mount type=volume,target=/work/.lake \
+  --workdir /work strong-four-proof:lean4.27 \
+  bash -c 'ln -s /opt/strong-four/.lake/packages /work/.lake/packages; exec sleep infinity'
+docker exec strong-four-lean bash scripts/check.sh
+```
+
+## Reproduce without Docker
+
+With Elan installed, from this directory:
+
+```sh
+lake exe cache get
+lake build
+lake env lean Audit.lean
+```
+
+The optional independent check requires Python and SymPy:
+
+```sh
+python3 scripts/check_construction.py
+```
+
+It verifies the identity, all nine Bézout certificates, the modulus, and
+several large members of the family directly from the Lean coefficients.
+These computations supplement the Lean proof; they are not trusted axioms.
+
+## Layout
+
+| File | Purpose |
+| --- | --- |
+| `StrongFour/Definitions.lean` | Four-variable statement and admissibility |
+| `StrongFour/Construction.lean` | Identity, coprimality certificates, sequence |
+| `StrongFour/Estimates.lean` | Admissibility, height and radical bounds |
+| `StrongFour/Result.lean` | Uniform-bound and limsup conclusions |
+| `Audit.lean` | Statement and axiom audit |
+| `scripts/check_construction.py` | Independent exact arithmetic |
+| `archive/` | Original evaluation artifacts, excluded from the build |
