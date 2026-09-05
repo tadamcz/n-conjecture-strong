@@ -13,8 +13,6 @@ A standalone Lean proof refuting the `n = 4` case of the [strong n-conjecture as
 
 The same family disproves every uniform bound
 `max |aᵢ| < C · rad(∏ |aᵢ|)^(1 + ε)` for `0 ≤ ε < 1/8`.
-The conclusion concerns **four integers only** and does not settle the
-three-variable abc conjecture.
 
 ## Source statement and relation to Vojta
 
