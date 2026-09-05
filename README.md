@@ -2,7 +2,7 @@
 
 # A counterexample to the strong four-conjecture
 
-A standalone Lean proof refuting the `n = 4` case of the [strong n-conjecture as stated on Wikipedia](https://en.wikipedia.org/wiki/N_conjecture#Stronger_form):
+A standalone Lean proof refuting the `n = 4` case of the strong n-conjecture as stated in [Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2):
 
 \[
 \limsup_{\substack{a_1+\cdots+a_4=0\\
@@ -14,37 +14,19 @@ A standalone Lean proof refuting the `n = 4` case of the [strong n-conjecture as
 The same family disproves every uniform bound
 `max |aᵢ| < C · rad(∏ |aᵢ|)^(1 + ε)` for `0 ≤ ε < 1/8`.
 
-## Source statement and relation to Vojta
+## The conjecture
 
-The original autoformalization targeted Wikipedia's “Stronger form” section;
-see the [archived challenge](archive/first-formulation/Challenge.lean).
-For `n = 4`, the active Lean statement uses the conditions and bound displayed
-there: pairwise coprime integers, zero total sum, no nonempty proper zero
-subsum, and a uniform exponent `1 + ε`. The quality theorem refutes the
-displayed limsup formulation as well. Neither displayed formulation includes
-an exceptional algebraic set.
-
-Wikipedia attributes its displayed statement to Vojta, but
-[Vojta's 1998 paper, §2, following (2.5)](https://arxiv.org/html/math/9806171v1)
-allows a **proper Zariski-closed exceptional set**. His bound applies outside
-that set to tuples with collective gcd one; it does not assert that pairwise
-coprimality and the subsum condition eliminate all exceptions.
-
-An exceptional set can contain an entire algebraic curve, not just finitely
-many points. Our family depends on one parameter and lies on such a curve
-in the projective plane `a₁ + a₂ + a₃ + a₄ = 0`. Vojta's formulation can
-exclude this curve. Thus the proof **refutes the statement displayed on
-Wikipedia for four integers, but does not refute Vojta's formulation with
-an exceptional set**. See [PROOF.md](PROOF.md#which-conjecture-is-refuted)
-for the geometric distinction.
-
-Our primary literature reference for the precise statement is
-[Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2).
-They attribute the conjecture to Coen Ramaekers, whose
+The conjecture predicts quality limsup equal to one for pairwise coprime
+integers with zero total sum and no nonempty proper zero subsum.
+Hölzl–Kleine–Stephan attribute it to Coen Ramaekers, whose
 [2009 thesis, Conjecture 5.1](https://pure.tue.nl/ws/portalfiles/portal/67739846/657782-1.pdf#page=24)
 states this formulation.
 Hölzl–Kleine–Stephan prove lower bounds for `n ≥ 5`; this repository's result
 concerns `n = 4`.
+
+The original autoformalization used
+[Wikipedia's “Stronger form” section](https://en.wikipedia.org/wiki/N_conjecture#Stronger_form);
+see the [archived challenge](archive/first-formulation/Challenge.lean).
 
 ## The proof
 

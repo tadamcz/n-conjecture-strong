@@ -5,7 +5,7 @@ import Mathlib
 
 These definitions specialize the strong n-conjecture displayed on Wikipedia
 to four integers. That source statement has no exceptional algebraic set.
-See README.md for its distinction from Vojta's formulation and for literature references.
+See README.md for literature references and PROOF.md for detailed source comparisons.
 -/
 
 namespace StrongFour
