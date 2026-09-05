@@ -2,7 +2,7 @@
 
 # A counterexample to the strong four-conjecture
 
-A standalone Lean proof that Ramaekers's [strong four-conjecture](https://en.wikipedia.org/wiki/N_conjecture#Stronger_form) is false:
+A standalone Lean proof that the [strong four-conjecture](https://en.wikipedia.org/wiki/N_conjecture#Stronger_form) is false:
 
 \[
 \limsup_{\substack{a_1+\cdots+a_4=0\\
@@ -13,8 +13,31 @@ A standalone Lean proof that Ramaekers's [strong four-conjecture](https://en.wik
 
 The same family disproves every uniform bound
 `max |aᵢ| < C · rad(∏ |aᵢ|)^(1 + ε)` for `0 ≤ ε < 1/8`.
-The conclusion concerns **four integers only**. It makes no claim about abc
-or about Vojta's conjecture with an exceptional algebraic set.
+The conclusion concerns **four integers only** and does not settle the
+three-variable abc conjecture.
+
+## Attribution and relation to Vojta
+
+The statement refuted here is the `n = 4` case of the strong n-conjecture
+displayed in Wikipedia's “Stronger form” section. The same statement appears
+in [Coen Ramaekers's 2009 thesis, Conjecture 5.1](https://pure.tue.nl/ws/portalfiles/portal/67739846/657782-1.pdf#page=24),
+and [Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2)
+attribute this formulation to Ramaekers: pairwise coprime integers, zero
+total sum, no nonempty proper zero subsum, and quality limsup equal to one.
+
+Wikipedia attributes its displayed statement to Vojta, but
+[Vojta's 1998 paper, §2, following (2.5)](https://arxiv.org/html/math/9806171v1)
+allows a **proper Zariski-closed exceptional set**. His bound applies outside
+that set to tuples with collective gcd one; it does not assert that pairwise
+coprimality and the subsum condition eliminate all exceptions.
+
+An exceptional set can contain an entire algebraic curve, not just finitely
+many points. Our family depends on one parameter and lies on such a curve
+in the projective plane `a₁ + a₂ + a₃ + a₄ = 0`. Vojta's formulation can
+exclude this curve. Thus the proof **refutes the statement displayed on
+Wikipedia for four integers, but does not refute Vojta's formulation with
+an exceptional set**. See [PROOF.md](PROOF.md#which-conjecture-is-refuted)
+for the geometric distinction.
 
 ## The proof
 
@@ -22,7 +45,7 @@ Import [StrongFour.lean](StrongFour.lean). The main results are in
 [StrongFour/Result.lean](StrongFour/Result.lean):
 
 - `StrongFour.no_uniform_bound`: failure for every `0 ≤ ε < 1/8`.
-- `StrongFour.conjecture_false`: negation of the usual four-variable statement.
+- `StrongFour.conjecture_false`: negation of the four-variable statement above.
 - `StrongFour.qualityLimsup_ge`: the lower bound `9/8`.
 - `StrongFour.qualityLimsup_ne_one`: refutation of the quality formulation.
 

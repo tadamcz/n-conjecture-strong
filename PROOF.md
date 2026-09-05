@@ -186,9 +186,41 @@ novelty are not claimed.
 
 ## Which conjecture is refuted
 
-The admissibility conditions match Ramaekers's conjecture, as stated in
-[Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2).
-[Vojta's original formulation, §2](https://arxiv.org/html/math/9806171v1)
-allows a proper exceptional algebraic set. This family lies on an algebraic
-curve and does not refute that formulation. Nothing here addresses the
-three-variable abc conjecture.
+The admissibility conditions match
+[Ramaekers's Conjecture 5.1](https://pure.tue.nl/ws/portalfiles/portal/67739846/657782-1.pdf#page=24),
+also stated in [Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2).
+For `n = 4`, this is the statement displayed in
+[Wikipedia's “Stronger form” section](https://en.wikipedia.org/wiki/N_conjecture#Stronger_form).
+The Lean results refute both its uniform-bound and quality-limsup formulations.
+
+The attribution to Vojta on Wikipedia needs a qualification.
+[Vojta's 1998 paper, §2, following (2.5)](https://arxiv.org/html/math/9806171v1)
+asserts the exponent `1 + ε` outside a proper Zariski-closed subset of the
+zero-sum projective hyperplane. Its integer tuples have collective gcd one;
+the paper does not replace the exceptional set by pairwise coprimality and
+the absence of zero subsums.
+
+For four coordinates the ambient space is the projective plane
+
+\[
+X=\{[a_1:a_2:a_3:a_4]\in\mathbb P^3:a_1+a_2+a_3+a_4=0\}.
+\]
+
+The map `u ↦ [A(u)]` is rational and nonconstant: for example, its coordinate
+ratio `a₁/a₃ = -u⁹/(105(2u − 3)⁶)` is nonconstant. Its image therefore has
+Zariski closure an irreducible algebraic curve `Y`, a proper subset of `X`.
+Every point of the constructed sequence belongs to `Y`. The sequence gives
+infinitely many distinct projective points, since its tuples are primitive
+and their heights tend to infinity.
+
+Vojta's exceptional set is allowed to contain `Y`. In fact, for any fixed
+`0 < ε < 1/8`, a bound of his form would force its exceptional set to contain
+`Y`: the eventual violations give infinitely many points on `Y`, whereas
+a closed subset not containing an irreducible curve meets it in only
+finitely many points. The subsum condition excludes certain hyperplanes;
+it does not exclude this curve.
+
+Thus this construction does not contradict Vojta's formulation. The curve
+argument is an ordinary geometric explanation of the scope of the result,
+not a formalized Lean theorem. Nothing here settles the three-variable
+abc conjecture.
