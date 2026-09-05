@@ -40,9 +40,13 @@ Wikipedia for four integers, but does not refute Vojta's formulation with
 an exceptional set**. See [PROOF.md](PROOF.md#which-conjecture-is-refuted)
 for the geometric distinction.
 
-For a precise literature statement, see the strong n-conjecture as stated in
+Our primary literature reference for the precise statement is
 [Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2).
-Their lower bounds address `n ≥ 5`; this repository's result concerns `n = 4`.
+They attribute the conjecture to Coen Ramaekers, whose
+[2009 thesis, Conjecture 5.1](https://pure.tue.nl/ws/portalfiles/portal/67739846/657782-1.pdf#page=24)
+states this formulation.
+Hölzl–Kleine–Stephan prove lower bounds for `n ≥ 5`; this repository's result
+concerns `n = 4`.
 
 ## The proof
 
