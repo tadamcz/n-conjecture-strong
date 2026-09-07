@@ -4,12 +4,12 @@
 
 A standalone Lean proof refuting the `n = 4` case of the strong n-conjecture as stated in [Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2):
 
-\[
+$$
 \limsup_{\substack{a_1+\cdots+a_4=0\\
 \text{pairwise coprime, no proper zero subsum}}}
 \frac{\log\max_i|a_i|}{\log\operatorname{rad}(|a_1a_2a_3a_4|)}
 \;\geq\;\frac98.
-\]
+$$
 
 The same family disproves every uniform bound
 `max |aᵢ| < C · rad(∏ |aᵢ|)^(1 + ε)` for `0 ≤ ε < 1/8`.
@@ -40,26 +40,21 @@ Import [StrongFour.lean](StrongFour.lean). The main results are in
 
 The construction is the integer identity
 
-\[
+$$
 u^9-(u-8)^5(u^2+20u+280)^2-105(2u-3)^6+D(u)=0,
-\]
+$$
 
 where
 
-\[
+$$
 D(u)=130032u^4+10728480u^3-202978980u^2+1238324220u-2568934655.
-\]
+$$
 
 A congruence progression ensures pairwise coprimality. On the subsequence
 `2u − 3 = 35 Kⁿ`, the radical of the third term has bounded prime support.
 The height grows at least as `u⁹`, while the radical is bounded by a constant
 times `u⁸`. See [PROOF.md](PROOF.md) for the mathematical argument, explicit
 constants, and provenance.
-
-This improves the two input submissions' bounds, `20/19` and `180/179`, and
-replaces both constructions with one degree-nine family. `9/8` is a **lower
-bound**, not a claim of equality or optimality. Novelty in the literature has
-not been established.
 
 ## Reproduce with Docker
 
