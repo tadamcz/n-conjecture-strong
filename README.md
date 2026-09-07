@@ -7,7 +7,7 @@ A standalone Lean proof refuting the `n = 4` case of the strong n-conjecture as 
 ```math
 \limsup_{\substack{a_1+\cdots+a_4=0\\
 \text{pairwise coprime, no proper zero subsum}}}
-\frac{\log\max_i|a_i|}{\log\operatorname{rad}(|a_1a_2a_3a_4|)}
+\frac{\log\max_i|a_i|}{\log\mathrm{rad}(|a_1a_2a_3a_4|)}
 \;\geq\;\frac98.
 ```
 
