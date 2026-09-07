@@ -4,12 +4,12 @@
 
 A standalone Lean proof refuting the `n = 4` case of the strong n-conjecture as stated in [Hölzl–Kleine–Stephan, Conjecture 7](https://arxiv.org/html/2409.13439v2):
 
-$$
+```math
 \limsup_{\substack{a_1+\cdots+a_4=0\\
 \text{pairwise coprime, no proper zero subsum}}}
 \frac{\log\max_i|a_i|}{\log\operatorname{rad}(|a_1a_2a_3a_4|)}
 \;\geq\;\frac98.
-$$
+```
 
 The same family disproves every uniform bound
 `max |aᵢ| < C · rad(∏ |aᵢ|)^(1 + ε)` for `0 ≤ ε < 1/8`.
@@ -40,15 +40,15 @@ Import [StrongFour.lean](StrongFour.lean). The main results are in
 
 The construction is the integer identity
 
-$$
+```math
 u^9-(u-8)^5(u^2+20u+280)^2-105(2u-3)^6+D(u)=0,
-$$
+```
 
 where
 
-$$
+```math
 D(u)=130032u^4+10728480u^3-202978980u^2+1238324220u-2568934655.
-$$
+```
 
 A congruence progression ensures pairwise coprimality. On the subsequence
 `2u − 3 = 35 Kⁿ`, the radical of the third term has bounded prime support.

@@ -23,9 +23,9 @@ Conjecture 1.8 and Theorem 2.1 in the
 In [HKS, §2, Theorem 14](https://arxiv.org/html/2409.13439v2), they use
 `t = 6^(2^k)`, for integers `k ≥ 1`, and the family
 
-$$
+```math
 (a,b,c,d,e)=\bigl((t+1)^3,-(t-1)^3,-6t^2,-31,29\bigr).
-$$
+```
 
 They verify stronger admissibility conditions and obtain a quality limsup
 at least `3/2`, hence also `Q_R(5) ≥ 3/2`.
@@ -33,16 +33,16 @@ at least `3/2`, hence also `Q_R(5) ≥ 3/2`.
 The following geometric observation is our inference from that construction.
 Every example satisfies
 
-$$
+```math
 29d+31e=29(-31)+31(29)=0.
-$$
+```
 
 Thus all its projective points lie in
 
-$$
+```math
 E=X_5\cap\{29d+31e=0\},\qquad
 X_5=\{[a:b:c:d:e]\in\mathbb P^4:a+b+c+d+e=0\}.
-$$
+```
 
 The extra equation is independent of the zero-sum equation, so `E` is a
 proper Zariski-closed subset of `X₅`. In ordinary terms, all these examples

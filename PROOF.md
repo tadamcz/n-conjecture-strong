@@ -2,27 +2,27 @@
 
 Write
 
-$$
+```math
 B(u)=u-8,\quad C(u)=u^2+20u+280,\quad L(u)=2u-3,
-$$
+```
 
 and
 
-$$
+```math
 D(u)=130032u^4+10728480u^3-202978980u^2+1238324220u-2568934655.
-$$
+```
 
 Direct expansion gives
 
-$$
+```math
 u^9-B(u)^5C(u)^2-105L(u)^6+D(u)=0. \tag{1}
-$$
+```
 
 The four integers in the family are
 
-$$
+```math
 A(u)=\bigl(u^9,-B(u)^5C(u)^2,-105L(u)^6,D(u)\bigr).
-$$
+```
 
 All the identities and inequalities used below are proved in the active
 Lean project, without importing the archived conjecture declarations.
@@ -50,9 +50,9 @@ entry of the four-tuple.
 
 Let
 
-$$
+```math
 M=25126489963081279061731322208117706216604104298982120.
-$$
+```
 
 This is the least common multiple of the nine displayed constants and 105.
 The Lean proof needs only their divisibility into `M`, verified by exact
@@ -60,9 +60,9 @@ arithmetic; the independent Python check also verifies the least-common-multiple
 
 At `u = 19`, the five base values are
 
-$$
+```math
 19,\quad11,\quad1021,\quad35,\quad38216358337.
-$$
+```
 
 Each required pair is coprime, and `u, B, C, D` are individually coprime to
 105. These properties persist whenever `u ≡ 19 (mod M)`. Indeed, a common
@@ -76,31 +76,31 @@ are pairwise coprime.
 
 Set `K = 2M + 1` and
 
-$$
+```math
 u_n=\frac{35K^n+3}{2}.
-$$
+```
 
 Since `K` is odd, these are integers. In Lean the sequence is defined without
 division:
 
-$$
+```math
 u_0=19,\qquad u_{n+1}=K u_n-3M.
-$$
+```
 
 The proof establishes
 
-$$
+```math
 u_n\geq n+19,\qquad u_n\equiv19\pmod M,\qquad L(u_n)=35K^n.
-$$
+```
 
 Thus the parameters tend to infinity and every four-tuple is pairwise
 coprime. All five base values exceed one for `u ≥ 19`. For the only less
 immediate case, one can write
 
-$$
+```math
 D(u)=u^2\bigl(130032u^2+10728480(u-19)+862140\bigr)
       +1238324220u-2568934655>1.
-$$
+```
 
 Equation (1) gives zero total sum. A vanishing proper subsum of four nonzero
 entries could have size one, two, or three. Sizes one and three are impossible
@@ -113,47 +113,47 @@ every `A(uₙ)` is admissible.
 Let `Hₙ` be the maximum absolute entry and `Rₙ` the radical of the product.
 The first entry immediately gives
 
-$$
+```math
 H_n\geq u_n^9.
-$$
+```
 
 Removing powers from the radical and using `L(uₙ) = 35Kⁿ` gives
 
-$$
+```math
 R_n\mid105\cdot35\cdot K\cdot u_n B(u_n)C(u_n)D(u_n).
-$$
+```
 
 For `u ≥ 19`, the elementary upper bounds
 
-$$
+```math
 B(u)\leq u,\qquad C(u)\leq301u^2,\qquad
 D(u)\leq1249182732u^4
-$$
+```
 
 therefore imply
 
-$$
+```math
 R_n\leq C_0u_n^8,\qquad
 C_0=105\cdot35\cdot301\cdot1249182732\cdot K>0.
-$$
+```
 
 No squarefreeness estimate for polynomial values is assumed. Only an upper
 bound for the radical is needed.
 
 For `0 ≤ ε < 1/8`, these bounds imply
 
-$$
+```math
 \frac{H_n}{R_n^{1+\varepsilon}}
 \geq C_0^{-(1+\varepsilon)}u_n^{1-8\varepsilon}\longrightarrow\infty.
-$$
+```
 
 Consequently no constant can give the conjectured uniform bound. The Lean
 argument proves this using logarithms, and also proves that for every real
 `q < 9/8`, eventually
 
-$$
+```math
 q<\frac{\log H_n}{\log R_n}.
-$$
+```
 
 The denominator is eventually positive: a nonzero integer tuple of height
 greater than one has radical greater than one. Height tending to infinity
@@ -168,10 +168,10 @@ The binomial-series construction in
 [Pakovich–Zvonkin, §3](https://arxiv.org/html/1509.07973)
 with `(t,s,k) = (5,2,2)` gives
 
-$$
+```math
 P(x)=x^9,\qquad
 Q(x)=(x-1)^5\left(x^2+\frac52x+\frac{35}{8}\right)^2.
-$$
+```
 
 The difference has degree six. Subtracting
 `(105/8)(x − 3/16)⁶` cancels its two highest-degree terms, leaving degree four.
@@ -208,9 +208,9 @@ the absence of zero subsums.
 
 For four coordinates the ambient space is the projective plane
 
-$$
+```math
 X=\{[a_1:a_2:a_3:a_4]\in\mathbb P^3:a_1+a_2+a_3+a_4=0\}.
-$$
+```
 
 The map `u ↦ [A(u)]` is rational and nonconstant: for example, its coordinate
 ratio `a₁/a₃ = -u⁹/(105(2u − 3)⁶)` is nonconstant. Its image therefore has
