@@ -113,5 +113,6 @@ These computations supplement the Lean proof; they are not trusted axioms.
 | `StrongFour/Construction.lean` | Identity, coprimality certificates, sequence |
 | `StrongFour/Estimates.lean` | Admissibility, height and radical bounds |
 | `StrongFour/Result.lean` | Uniform-bound and limsup conclusions |
+| `Challenge.lean` | Comparator-format statement of the refutation, both formulations, with `sorry` |
 | `scripts/check_construction.py` | Independent exact arithmetic |
 | `archive/` | Original evaluation artifacts, excluded from the build |
